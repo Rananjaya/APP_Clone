@@ -5,7 +5,8 @@ import HomeScreen from './src/index';
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
   // Profile: {screen: ProfileScreen},
-});
+}
+);
 
 const App = createAppContainer(MainNavigator);
 

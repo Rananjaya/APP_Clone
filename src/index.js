@@ -1,6 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Sample React Native App By Rananjaya
+ * https://github.com/Rananjaya
  *
  * @format
  * @flow
@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  ActivityIndicator
 } from 'react-native';
 
 import {
@@ -25,58 +26,34 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
+export default class App extends React.Component{
 
-              </Text>
-              <Icon name="camera" size={300} color="#900" />
-            </View>
+    static navigationOptions ={
+        headerTitleStyle: {    textAlign:"center", 
+        flex:1 },
+         headerLeft : <Icon name="camera-retro" size={30} color="black" />,
+         title:"Instagram",
+         headerRight : <Icon name="paper-plane" size={30} color="black" />
+}
 
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+
+  render(){
+    return(
+   
+      <View style={styles.container}>
+            <Text>Test App</Text>
+      </View>
+    );
+  }
+}
+
 
 const styles = StyleSheet.create({
+  container:{
+  flex:1,
+  alignItems:'center',
+  justifyContent:'center'
+  },
   scrollView: {
     backgroundColor: Colors.lighter,
   },
@@ -114,5 +91,3 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
-
-export default App;
